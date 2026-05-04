@@ -13,7 +13,6 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@heroui/react";
 import Image from "next/image";
@@ -180,35 +179,22 @@ function Keyword({ children }: { children: string }) {
 function SectionMark() {
   return (
     <div className="mb-6 flex justify-center lg:mb-7">
-      <Image
-        src="/icon-touro.avif"
-        alt="Simbolo Tuche"
-        width={38}
-        height={38}
-        className="h-9 w-9 object-contain opacity-90"
-      />
+      <div className="h-px w-20 bg-[linear-gradient(90deg,transparent,var(--accent),transparent)]" />
     </div>
   );
 }
 
 function BrandLockup({ centered = false }: { centered?: boolean }) {
   return (
-    <div className={`flex items-center gap-4 ${centered ? "justify-center" : ""}`}>
+    <div className={`${centered ? "flex justify-center" : ""}`}>
       <Image
-        src="/icon-touro.avif"
-        alt="Simbolo Tuche"
-        width={68}
-        height={46}
-        className="h-auto w-[58px] object-contain"
+        src="/logo.avif"
+        alt="Logo Tuche"
+        width={220}
+        height={84}
+        className="h-auto w-[190px] object-contain sm:w-[220px]"
+        priority
       />
-      <div>
-        <p className="font-[family-name:var(--font-libre-baskerville)] text-[38px] leading-none tracking-[0.12em] text-white sm:text-[42px]">
-          TUCHE
-        </p>
-        <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.42em] text-[var(--muted)] sm:text-xs">
-          Asset Management
-        </p>
-      </div>
     </div>
   );
 }
@@ -312,20 +298,20 @@ export default function Home() {
             <BrandLockup />
 
             <Button
-              className="rounded-full border border-[var(--line)] bg-[color:rgba(255,255,255,0.03)] px-5 font-semibold text-white"
+              className="rounded-full border border-[var(--line)] bg-[color:rgba(255,255,255,0.7)] px-5 font-semibold text-[var(--ink)] hover:bg-white"
               onPress={() => openLink(primaryCta)}
             >
               Falar com a equipe
             </Button>
           </div>
 
-          <div className="mt-12 grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:gap-8">
+          <div className="mt-12 grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(420px,620px)] lg:gap-10">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ink)]/90">
                 Sorocaba, SP  <span className="mx-2 text-[var(--accent-strong)]">•</span> Gestao independente
               </p>
 
-              <h1 className="mt-7 text-5xl font-semibold leading-[0.98] text-white sm:text-6xl lg:text-[76px]">
+              <h1 className="mt-7 text-4xl font-semibold leading-[1.02] text-[var(--ink)] sm:text-5xl lg:text-[64px] xl:text-[68px]">
                 Uma gestao de <Keyword>patrimonio</Keyword> feita para quem busca clareza, seguranca e tranquilidade.
               </h1>
 
@@ -335,13 +321,13 @@ export default function Home() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button
-                  className="h-16 rounded-[1.2rem] bg-[var(--accent)] px-8 text-base font-bold text-white shadow-[0_18px_50px_rgba(187,141,77,0.28)] hover:bg-[var(--accent-strong)]"
+                  className="h-16 rounded-[1.2rem] bg-[var(--accent)] px-8 text-base font-bold text-white shadow-[0_18px_50px_rgba(187,141,77,0.22)] hover:bg-[var(--accent-strong)]"
                   onPress={() => openLink(primaryCta)}
                 >
                   AGENDAR ATENDIMENTO
                 </Button>
                 <Button
-                  className="h-16 rounded-[1.2rem] border border-[var(--line-strong)] bg-transparent px-8 text-base font-semibold text-white hover:bg-[color:rgba(255,255,255,0.06)]"
+                  className="h-16 rounded-[1.2rem] border border-[var(--line-strong)] bg-white/60 px-8 text-base font-semibold text-[var(--ink)] hover:bg-white"
                   onPress={() => scrollToSection("solucoes")}
                 >
                   Conhecer solucoes
@@ -349,20 +335,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[520px]">
+            <div className="relative mx-auto w-full max-w-[620px]">
               <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_25%,rgba(187,141,77,0.34),transparent_40%),radial-gradient(circle_at_60%_65%,rgba(27,102,153,0.28),transparent_38%)] blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[color:rgba(6,20,33,0.82)] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-                <div className="relative aspect-[0.9/1] overflow-hidden rounded-[1.4rem] bg-[radial-gradient(circle_at_50%_35%,rgba(24,111,172,0.18),transparent_32%),linear-gradient(180deg,rgba(4,15,24,0.98),rgba(3,10,16,0.98))]">
+              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[color:rgba(255,255,255,0.72)] p-3 shadow-[0_30px_90px_rgba(17,35,52,0.12)]">
+                <div className="relative aspect-[1.18/1] overflow-hidden rounded-[1.4rem] bg-[radial-gradient(circle_at_50%_35%,rgba(86,154,206,0.16),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.95),rgba(237,243,248,0.95))]">
                   <Image
                     src="/image-hero.avif"
                     alt="Simbolo Tuche"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 520px"
-                    className="object-contain p-8"
+                    sizes="(max-width: 1024px) 100vw, 620px"
+                    className="object-contain px-2 py-0"
                     priority
                   />
                 </div>
-                <div className="absolute inset-x-8 bottom-8 rounded-[1.5rem] border border-[color:rgba(255,255,255,0.12)] bg-[color:rgba(2,9,16,0.62)] px-5 py-4 backdrop-blur">
+                <div className="absolute inset-x-8 bottom-8 rounded-[1.5rem] border border-[var(--line)] bg-[color:rgba(255,255,255,0.8)] px-5 py-4 backdrop-blur">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent-strong)]">
                     Seu dinheiro, sua liberdade
                   </p>
@@ -376,7 +362,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[var(--line)] bg-[color:rgba(2,11,18,0.98)] py-5">
+      <section className="border-y border-[var(--line)] bg-[color:rgba(255,255,255,0.82)] py-5">
         <div className="lp-marquee">
           <div className="lp-marquee-track">
             {marqueeItems.map((item, index) => (
@@ -393,12 +379,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
           <div className="grid gap-5 md:grid-cols-3">
             {topCards.map((item) => (
-              <Card key={item.title} className="lp-panel rounded-[1.75rem] bg-[var(--card)] px-1 py-1 text-white">
+              <Card key={item.title} className="lp-panel rounded-[1.75rem] bg-[var(--card)] px-1 py-1 text-[var(--ink)]">
                 <CardContent className="p-7">
                   <div className="mb-5 inline-flex rounded-2xl bg-[var(--accent-soft)] p-3">
                     <Icon name={item.icon} />
                   </div>
-                  <CardTitle className="text-2xl font-semibold text-white">{item.title}</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-[var(--ink)]">{item.title}</CardTitle>
                   <CardDescription className="mt-3 text-base leading-7 text-[var(--muted)]">
                     {item.description}
                   </CardDescription>
@@ -413,7 +399,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
           <SectionMark />
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h2 className="text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               Especialidades que sustentam a <Keyword>experiencia</Keyword> da Tuche.
             </h2>
             <p className="mt-4 text-lg leading-8 text-[var(--muted)]">
@@ -423,30 +409,23 @@ export default function Home() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {authorityCards.map((item, index) => (
-              <Card key={item.title} className="group overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[color:rgba(5,17,27,0.95)] text-white transition-transform duration-300 hover:-translate-y-1">
+              <Card key={item.title} className="group overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[color:rgba(255,255,255,0.82)] text-[var(--ink)] transition-transform duration-300 hover:-translate-y-1">
                 <CardContent className="relative flex h-[330px] flex-col justify-between overflow-hidden p-6">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(24,111,172,0.18),transparent_24%),linear-gradient(180deg,rgba(5,17,27,0.98),rgba(2,9,16,1))]" />
-                  <div className="absolute -right-10 top-6 text-[120px] font-semibold leading-none text-[color:rgba(255,255,255,0.04)]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(86,154,206,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.96),rgba(242,246,248,0.96))]" />
+                  <div className="absolute -right-10 top-6 text-[120px] font-semibold leading-none text-[color:rgba(18,33,49,0.04)]">
                     0{index + 1}
                   </div>
                   <div className="relative z-10 flex items-start justify-between gap-4">
                     <span className="rounded-full border border-[color:rgba(215,168,100,0.22)] bg-[color:rgba(215,168,100,0.08)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-strong)]">
                       Frente estrategica
                     </span>
-                    <Image
-                      src="/icon-touro.avif"
-                      alt="Simbolo Tuche"
-                      width={34}
-                      height={34}
-                      className="h-8 w-8 object-contain opacity-80"
-                    />
                   </div>
-                  <CardHeader className="relative z-10 flex-col items-start gap-3 p-0">
-                    <CardTitle className="text-3xl leading-none text-white">{item.title}</CardTitle>
-                    <CardDescription className="text-base leading-7 text-[var(--muted)]">
+                  <div className="relative z-10 flex flex-col items-start gap-3">
+                    <CardTitle className="max-w-[10ch] text-[42px] leading-[0.96] text-[var(--ink)]">{item.title}</CardTitle>
+                    <CardDescription className="max-w-[18ch] text-base leading-8 text-[var(--muted)]">
                       {item.subtitle}
                     </CardDescription>
-                  </CardHeader>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -463,15 +442,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[color:rgba(1,9,15,0.98)] py-18 lg:py-24">
+      <section className="bg-[color:rgba(255,255,255,0.7)] py-18 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-2">
-            <Card className="lp-panel rounded-[2rem] bg-[color:rgba(5,17,27,0.95)] p-2 text-white">
+            <Card className="lp-panel rounded-[2rem] bg-[color:rgba(255,255,255,0.84)] p-2 text-[var(--ink)]">
               <CardContent className="p-8 sm:p-10">
-                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-[color:rgba(215,168,100,0.34)] bg-transparent text-3xl text-white">
+                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-[color:rgba(215,168,100,0.34)] bg-transparent text-3xl text-[var(--ink)]">
                   ×
                 </div>
-                <CardTitle className="text-4xl font-semibold leading-tight text-white">
+                <CardTitle className="text-4xl font-semibold leading-tight text-[var(--ink)]">
                   O que a Tuche <Keyword>nao e</Keyword>
                 </CardTitle>
                 <ul className="mt-8 space-y-5 text-lg leading-8 text-[var(--muted)]">
@@ -485,12 +464,12 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="rounded-[2rem] border border-[color:rgba(215,168,100,0.2)] bg-[radial-gradient(circle_at_75%_20%,rgba(25,104,161,0.2),transparent_28%),linear-gradient(180deg,rgba(7,18,29,0.98),rgba(4,11,18,0.98))] p-2 text-white shadow-[0_30px_80px_rgba(0,0,0,0.26)]">
+            <Card className="rounded-[2rem] border border-[color:rgba(215,168,100,0.2)] bg-[radial-gradient(circle_at_75%_20%,rgba(86,154,206,0.14),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.98),rgba(242,246,248,0.98))] p-2 text-[var(--ink)] shadow-[0_30px_80px_rgba(17,35,52,0.08)]">
               <CardContent className="p-8 sm:p-10">
                 <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--accent)] text-3xl text-white">
                   ✓
                 </div>
-                <CardTitle className="text-4xl font-semibold leading-tight text-white">
+                <CardTitle className="text-4xl font-semibold leading-tight text-[var(--ink)]">
                   O que a Tuche <Keyword>e</Keyword>
                 </CardTitle>
                 <ul className="mt-8 space-y-5 text-lg leading-8 text-[var(--ink)]/90">
@@ -511,7 +490,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <SectionMark />
           <div className="text-center">
-            <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h2 className="text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               Viva a <Keyword>experiencia</Keyword> de um atendimento mais estrategico.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-[var(--muted)]">
@@ -519,7 +498,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 rounded-[2rem] border border-[var(--line)] bg-[color:rgba(2,9,16,0.82)] p-4 shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
+          <div className="mt-12 rounded-[2rem] border border-[var(--line)] bg-[color:rgba(255,255,255,0.82)] p-4 shadow-[0_35px_90px_rgba(17,35,52,0.1)]">
             <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem]">
               <Image
                 src="/image-hero.avif"
@@ -528,7 +507,7 @@ export default function Home() {
                 sizes="100vw"
                 className="object-contain p-10 opacity-75"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,9,16,0.22),rgba(2,9,16,0.55))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(18,33,49,0.08))]" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex h-28 w-28 items-center justify-center rounded-full bg-[color:rgba(187,141,77,0.86)] text-4xl text-white shadow-[0_18px_50px_rgba(187,141,77,0.28)]">
                   ▶
@@ -552,19 +531,19 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <SectionMark />
           <div className="text-center">
-            <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h2 className="text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               O que voce vai <Keyword>encontrar</Keyword> com a Tuche.
             </h2>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {benefitCards.map((item) => (
-              <Card key={item.title} className="lp-panel rounded-[1.75rem] bg-[color:rgba(4,14,22,0.9)] p-2 text-center text-white">
+              <Card key={item.title} className="lp-panel rounded-[1.75rem] bg-[color:rgba(255,255,255,0.84)] p-2 text-center text-[var(--ink)]">
                 <CardContent className="flex min-h-[260px] flex-col items-center justify-center p-8">
                   <div className="mb-6 inline-flex rounded-2xl bg-[var(--accent-soft)] p-3">
                     <Icon name={item.icon} />
                   </div>
-                  <CardTitle className="text-3xl font-semibold text-white">{item.title}</CardTitle>
+                  <CardTitle className="text-3xl font-semibold text-[var(--ink)]">{item.title}</CardTitle>
                   <CardDescription className="mt-4 max-w-sm text-lg leading-8 text-[var(--muted)]">
                     {item.description}
                   </CardDescription>
@@ -584,18 +563,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="solucoes" className="bg-[color:rgba(2,9,15,0.98)] py-18 lg:py-24">
+      <section id="solucoes" className="bg-[color:rgba(255,255,255,0.74)] py-18 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionMark />
           <div className="mx-auto max-w-3xl text-center">
-            <Image
-              src="/logo-10-anos-tuche.avif"
-              alt="Tuche 10 anos"
-              width={150}
-              height={60}
-              className="mx-auto mb-5 h-auto w-[130px] object-contain brightness-110 contrast-125"
-            />
-            <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <div className="mx-auto mb-5 inline-flex rounded-[1.25rem] border border-[var(--line)] bg-white px-5 py-4 shadow-[0_18px_50px_rgba(17,35,52,0.08)]">
+              <Image
+                src="/logo-10-anos-tuche.avif"
+                alt="Tuche 10 anos"
+                width={170}
+                height={68}
+                className="h-auto w-[150px] object-contain"
+              />
+            </div>
+            <h2 className="text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               Solucoes pensadas para quem quer um relacionamento mais <Keyword>inteligente</Keyword> com o patrimonio.
             </h2>
           </div>
@@ -604,17 +585,17 @@ export default function Home() {
             {solutionCards.map((item) => (
               <Card
                 key={item.title}
-                className={`overflow-hidden rounded-[1.8rem] border p-2 text-white shadow-[0_30px_80px_rgba(0,0,0,0.26)] ${
+                className={`overflow-hidden rounded-[1.8rem] border p-2 text-[var(--ink)] shadow-[0_30px_80px_rgba(17,35,52,0.08)] ${
                   item.featured
-                    ? "border-[color:rgba(215,168,100,0.28)] bg-[radial-gradient(circle_at_50%_20%,rgba(24,111,172,0.24),transparent_24%),linear-gradient(180deg,rgba(5,20,33,0.98),rgba(3,11,18,0.98))]"
-                    : "border-[var(--line)] bg-[color:rgba(5,17,27,0.95)]"
+                    ? "border-[color:rgba(215,168,100,0.28)] bg-[radial-gradient(circle_at_50%_20%,rgba(86,154,206,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.98),rgba(242,246,248,0.98))]"
+                    : "border-[var(--line)] bg-[color:rgba(255,255,255,0.86)]"
                 }`}
               >
                 <CardContent className="p-8">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent-strong)]">
                     {item.label}
                   </p>
-                  <CardTitle className="mt-4 text-5xl font-semibold text-white">
+                  <CardTitle className="mt-4 max-w-[11ch] text-4xl font-semibold leading-[1.02] text-[var(--ink)] sm:text-[48px]">
                     {item.title}
                   </CardTitle>
                   <CardDescription className="mt-5 text-base leading-8 text-[var(--muted)]">
@@ -652,24 +633,24 @@ export default function Home() {
             alt="Fundo institucional Tuche"
             fill
             sizes="100vw"
-            className="object-cover opacity-18"
+            className="object-contain opacity-10"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,9,16,0.78),rgba(2,9,16,0.92))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(242,246,248,0.9))]" />
         </div>
 
         <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-8">
           <SectionMark />
-          <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+          <h2 className="text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
             Quer uma gestao mais <Keyword>elegante</Keyword> para o seu patrimonio?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-[var(--muted)]">
             A Tuche combina atendimento proximo, visao ampla de patrimonio e uma estrutura regulada para quem quer decidir melhor hoje sem perder o horizonte de longo prazo.
           </p>
 
-          <div className="mt-10 grid gap-4 rounded-[1.75rem] border border-[color:rgba(215,168,100,0.2)] bg-[color:rgba(4,14,22,0.7)] p-6 sm:grid-cols-3">
+          <div className="mt-10 grid gap-4 rounded-[1.75rem] border border-[color:rgba(215,168,100,0.24)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(242,246,248,0.96))] p-6 shadow-[0_24px_70px_rgba(17,35,52,0.08)] sm:grid-cols-3">
             {credibilityStats.map((item) => (
-              <div key={item.value} className="border-b border-[var(--line)] pb-4 last:border-b-0 sm:border-b-0 sm:border-r sm:pb-0 last:sm:border-r-0">
-                <p className="text-5xl font-semibold text-white sm:text-6xl">{item.value}</p>
+              <div key={item.value} className="border-b border-[color:rgba(18,33,49,0.08)] pb-4 last:border-b-0 sm:border-b-0 sm:border-r sm:pb-0 last:sm:border-r-0">
+                <p className="text-5xl font-semibold text-[var(--ink)] sm:text-6xl">{item.value}</p>
                 <p className="mt-2 text-lg text-[var(--muted)]">{item.label}</p>
               </div>
             ))}
@@ -681,7 +662,7 @@ export default function Home() {
 
           <div className="mt-8 flex justify-center">
             <Button
-              className="h-16 rounded-[1.2rem] bg-transparent px-8 text-base font-bold text-white ring-1 ring-[color:rgba(215,168,100,0.4)] hover:bg-[color:rgba(215,168,100,0.12)]"
+              className="h-16 rounded-[1.2rem] bg-[var(--accent)] px-8 text-base font-bold text-white shadow-[0_18px_50px_rgba(187,141,77,0.18)] hover:bg-[var(--accent-strong)]"
               onPress={() => openLink(primaryCta)}
             >
               QUERO FALAR COM UM ESPECIALISTA
@@ -694,16 +675,16 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <SectionMark />
           <div className="text-center">
-            <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h2 className="text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               Duvidas <Keyword>frequentes</Keyword>
             </h2>
           </div>
 
-          <Accordion className="mt-12 space-y-4">
+          <Accordion hideSeparator className="lp-faq mt-12 space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem key={item.question} id={`faq-${index}`} className="rounded-[1.35rem] border border-[var(--line)] bg-[color:rgba(6,20,33,0.9)] px-6 py-2 text-white shadow-[0_20px_50px_rgba(0,0,0,0.16)]">
+              <AccordionItem key={item.question} id={`faq-${index}`} className="rounded-[1.35rem] border border-[var(--line)] bg-[color:rgba(255,255,255,0.86)] px-6 py-2 text-[var(--ink)] shadow-[0_20px_50px_rgba(17,35,52,0.08)]">
                 <AccordionHeading>
-                  <AccordionTrigger className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-white outline-none">
+                  <AccordionTrigger className="flex w-full items-center justify-between gap-4 rounded-[1rem] py-5 text-left text-lg font-bold text-[var(--ink)] outline-none">
                     <span>{item.question}</span>
                     <AccordionIndicator className="shrink-0 text-[var(--accent-strong)]" />
                   </AccordionTrigger>
@@ -719,11 +700,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[color:rgba(1,8,13,0.98)] pb-20 pt-8 lg:pb-24">
+      <section className="bg-[color:rgba(255,255,255,0.7)] pb-20 pt-8 lg:pb-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="rounded-[2.2rem] border border-[var(--line)] bg-[linear-gradient(180deg,rgba(7,22,34,0.98),rgba(4,11,18,1))] p-8 text-center shadow-[0_35px_90px_rgba(0,0,0,0.32)] sm:p-12">
+          <div className="rounded-[2.2rem] border border-[var(--line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(242,246,248,1))] p-8 text-center shadow-[0_35px_90px_rgba(17,35,52,0.08)] sm:p-12">
             <BrandLockup centered />
-            <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               Se o objetivo e investir com mais <Keyword>tranquilidade</Keyword>, a proxima conversa precisa ser com metodo.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--muted)]">
@@ -738,7 +719,7 @@ export default function Home() {
                 CHAMAR NO WHATSAPP
               </Button>
               <Button
-                className="h-16 rounded-[1.2rem] border border-[var(--line-strong)] bg-transparent px-8 text-base font-semibold text-white hover:bg-[color:rgba(255,255,255,0.06)]"
+                className="h-16 rounded-[1.2rem] border border-[var(--line-strong)] bg-transparent px-8 text-base font-semibold text-[var(--ink)] hover:bg-white"
                 onPress={() => openLink("mailto:contato@tucheasset.com.br")}
               >
                 ENVIAR E-MAIL
